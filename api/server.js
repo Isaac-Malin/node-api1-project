@@ -78,10 +78,7 @@ server.put('/api/users/:id', (req, res) => {
         return res.status(404).json({ message: "The user with the specified ID does not exist" });
       }
       // Assuming updatedUser contains the updated fields
-      res.status(200).json({
-        message: "You have successfully updated the user",
-        data: updatedUser
-      });
+      res.status(200).json(updatedUser);
     })
     .catch(err => {
       console.error("Error updating user:", err);
